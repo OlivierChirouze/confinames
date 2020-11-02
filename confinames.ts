@@ -7,7 +7,7 @@ const WORDS_TAB_NAME = 'WORDS';
 const INIT_RED = '#f4cccc';
 const INIT_BLUE = '#cfe2f3';
 const INIT_BLACK = '#999999';
-const INIT_YELLOW = '#f3f3f3';
+const INIT_YELLOW = '#fcf8ec';
 const NB_COLS = 5;
 const NB_ROWS = 5;
 const NB_CARDS_PER_COLOR = 8;
@@ -152,7 +152,10 @@ class Confinames {
     setRandomColor(startColor);
 
     // And now complete with yellow cards
-    // TODO
+    const remainingCards = NB_COLS * NB_ROWS - except.length;
+    for (let i = 0; i < remainingCards; i ++) {
+      setRandomColor(INIT_YELLOW);
+    }
 
     Ui.alert(`Les ${startColor == INIT_RED ? 'ROUGE' : 'BLEU'} commencent !`);
   }
